@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: helm
+
+server:
+ port: 8091
