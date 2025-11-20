@@ -83,3 +83,6 @@ helm history springboot-local
 
 # Uninstall release if needed
 helm uninstall springboot-local
+
+# To get the external URL to access a Kubernetes service running in Minikube.
+minikube service springboot-local-demokchart --url
