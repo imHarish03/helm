@@ -48,8 +48,14 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
 
-volumes: []
-volumeMounts: []
+volumes:
+  - name: config-volume
+    configMap:
+      name: app-config
+
+volumeMounts:
+  - name: config-volume
+    mountPath: /config
 
 nodeSelector: {}
 tolerations: []
@@ -59,4 +65,8 @@ affinity: {}
 # ⭐ Add environment variables section here
 # ------------------------------------------------------------------------
 env:
-  APP_MESSAGE: "Default Dev Message from HELM"
+  APP_MESSAGE: "Default Dev Message from HELM Env Variables"
+#SPRING_CONFIG_LOCATION: "/config/application.yaml"
+
+
+environment: prop from values-dev.yaml
